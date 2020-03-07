@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title class="title">{{ message.description }}</mat-card-title>
+    <mat-card-subtitle class="timestamp">{{ message.timestamp | date }}</mat-card-subtitle>
+    <span class="icon-box" [style.color]="getColor(message.type)">
+      <i class="material-icons">
+        {{ getIcon(message.type) }}
+      </i>
+    </span>
+  </mat-card-title-group>
+
+  <mat-card-content>
+    <mat-card-subtitle>
+      <div class="grid-container">
+        <div class="app">{{ message.application }}</div>
+        <div class="appv">{{ message.version }}</div>
+        <div class="sender">{{ message.sender }}</div>
+        <div class="location">{{ message.location }}</div>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-content>
+</mat-card>

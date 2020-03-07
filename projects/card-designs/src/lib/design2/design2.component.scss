@@ -15,15 +15,20 @@
     top: 72px;
     bottom: 79px;
   }
-  .state-box {
+  .icon-box {
     position: absolute;
+
     width: 81px;
     height: 81px;
     min-width: 81px;
     min-height: 81px;
     left: 234px;
     top: 12px;
+    text-align: end;
     z-index: 3;
+    .material-icons {
+      font-size: 48px;
+    }
   }
 }
 

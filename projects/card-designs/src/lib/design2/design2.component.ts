@@ -3,11 +3,11 @@ import { message } from 'projects/alv-types/src/public-api';
 import { coerceCssPixelValue } from '@angular/cdk/coercion';
 
 @Component({
-  selector: 'allphi-design1',
-  templateUrl: './design1.component.html',
-  styleUrls: ['./design1.component.scss']
+  selector: 'cards-design2',
+  templateUrl: './design2.component.html',
+  styleUrls: ['./design2.component.scss']
 })
-export class Design1Component implements OnInit {
+export class Design2Component implements OnInit {
   @HostBinding('style.height') height: string;
   @HostBinding('style.width') width: string;
 
@@ -20,6 +20,20 @@ export class Design1Component implements OnInit {
     this.width = coerceCssPixelValue(344);
   }
 
+  getIcon(type: string): string {
+    switch (type) {
+      case 'Critical':
+        return 'notification_important';
+      case 'Error':
+        return '#error';
+      case 'Warning':
+        return 'warning';
+      case 'Info':
+        return 'info';
+      default:
+        return 'fingerprint';
+    }
+  }
   getColor(type: string): string {
     switch (type) {
       case 'Critical':
