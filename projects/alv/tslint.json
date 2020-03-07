@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "allphi",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "allphi",
+      "kebab-case"
+    ]
+  }
+}

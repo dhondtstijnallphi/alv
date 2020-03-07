@@ -1,0 +1,211 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "alv": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/alv",
+      "sourceRoot": "projects/alv/src",
+      "prefix": "allphi",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/alv",
+            "index": "projects/alv/src/index.html",
+            "main": "projects/alv/src/main.ts",
+            "polyfills": "projects/alv/src/polyfills.ts",
+            "tsConfig": "projects/alv/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/alv/src/favicon.ico",
+              "projects/alv/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/alv/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/alv/src/environments/environment.ts",
+                  "with": "projects/alv/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "alv:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "alv:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "alv:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/alv/src/test.ts",
+            "polyfills": "projects/alv/src/polyfills.ts",
+            "tsConfig": "projects/alv/tsconfig.spec.json",
+            "karmaConfig": "projects/alv/karma.conf.js",
+            "assets": [
+              "projects/alv/src/favicon.ico",
+              "projects/alv/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/alv/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/alv/tsconfig.app.json",
+              "projects/alv/tsconfig.spec.json",
+              "projects/alv/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/alv/e2e/protractor.conf.js",
+            "devServerTarget": "alv:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "alv:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "card-designs": {
+      "projectType": "library",
+      "root": "projects/card-designs",
+      "sourceRoot": "projects/card-designs/src",
+      "prefix": "cards",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/card-designs/tsconfig.lib.json",
+            "project": "projects/card-designs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/card-designs/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/card-designs/src/test.ts",
+            "tsConfig": "projects/card-designs/tsconfig.spec.json",
+            "karmaConfig": "projects/card-designs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/card-designs/tsconfig.lib.json",
+              "projects/card-designs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "alv-types": {
+      "projectType": "library",
+      "root": "projects/alv-types",
+      "sourceRoot": "projects/alv-types/src",
+      "prefix": "alv",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/alv-types/tsconfig.lib.json",
+            "project": "projects/alv-types/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/alv-types/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/alv-types/src/test.ts",
+            "tsConfig": "projects/alv-types/tsconfig.spec.json",
+            "karmaConfig": "projects/alv-types/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/alv-types/tsconfig.lib.json",
+              "projects/alv-types/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "alv"
+}
