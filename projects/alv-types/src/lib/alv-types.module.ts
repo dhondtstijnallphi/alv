@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { AlvTypesComponent } from './alv-types.component';
-
-
 
 @NgModule({
-  declarations: [AlvTypesComponent],
-  imports: [
-  ],
-  exports: [AlvTypesComponent]
+  declarations: [],
+  imports: [],
+  exports: []
 })
-export class AlvTypesModule { }
+export class AlvTypesModule {}

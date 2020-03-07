@@ -1,0 +1,73 @@
+// .leftAlign {
+//   float: left;
+//   height: 24px;
+// }
+
+// .rightAlign {
+//   float: right;
+//   height: 24px;
+// }
+.example-card {
+  width: 344px;
+  height: 172px;
+  .title {
+    position: absolute;
+    height: 48px;
+    left: 16px;
+    right: 20px;
+    top: 35px;
+  }
+  .timestamp {
+    position: absolute;
+    left: 16px;
+    right: 120px;
+    top: 72px;
+    bottom: 79px;
+  }
+  .state-box {
+    position: absolute;
+    width: 81px;
+    height: 81px;
+    min-width: 81px;
+    min-height: 81px;
+    left: 234px;
+    top: 12px;
+    z-index: 3;
+  }
+}
+
+.grid-container {
+  position: absolute;
+  width: calc(100% - 20px);
+  left: 16px;
+  top: 102px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'app appv'
+    'sender location';
+  .app {
+    grid-area: app;
+  }
+  .appv {
+    grid-area: appv;
+    text-align: end;
+  }
+  .sender {
+    grid-area: sender;
+  }
+  .location {
+    grid-area: location;
+    text-align: end;
+  }
+}
+
+table {
+  tr {
+    width: 100%;
+    td {
+      width: 50%;
+    }
+  }
+}
