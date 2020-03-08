@@ -10,14 +10,18 @@ import { coerceCssPixelValue } from '@angular/cdk/coercion';
 export class Design1Component implements OnInit {
   @HostBinding('style.height') height: string;
   @HostBinding('style.width') width: string;
+  @HostBinding('style.max-height') maxHeight: string;
+  @HostBinding('style.max-width') maxWidth: string;
 
   @Input() message: message;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.height = coerceCssPixelValue(125);
-    this.width = coerceCssPixelValue(344);
+    this.height = coerceCssPixelValue('160px');
+    this.width = coerceCssPixelValue('344px');
+    this.maxHeight = this.height;
+    this.maxWidth = this.width;
   }
 
   getColor(type: string): string {

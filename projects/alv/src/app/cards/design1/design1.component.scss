@@ -1,37 +1,33 @@
 .example-card {
-  width: 344px;
-  height: 125px;
   .title {
-    position: absolute;
+    position: relative;
     height: 48px;
     left: 16px;
-    right: 20px;
-    top: 35px;
+    top: 16px;
+    width: calc(100% - 81px);
   }
   .timestamp {
-    position: absolute;
+    position: relative;
+    width: calc(100% - 81px);
     left: 16px;
-    right: 120px;
-    top: 72px;
-    bottom: 79px;
+    top: 5px;
   }
   .state-box {
-    position: absolute;
+    position: relative;
     width: 81px;
     height: 81px;
     min-width: 81px;
     min-height: 81px;
-    left: 234px;
-    top: 12px;
+
     z-index: 3;
   }
 }
 
 .grid-container {
-  position: absolute;
+  position: relative;
   width: calc(100% - 20px);
   left: 16px;
-  top: 102px;
+  top: 12px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);

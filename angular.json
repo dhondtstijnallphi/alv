@@ -23,14 +23,8 @@
             "polyfills": "projects/alv/src/polyfills.ts",
             "tsConfig": "projects/alv/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/alv/src/favicon.ico",
-              "projects/alv/src/assets"
-            ],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "projects/alv/src/styles.scss"
-            ],
+            "assets": ["projects/alv/src/favicon.ico", "projects/alv/src/assets"],
+            "styles": ["projects/alv/src/custom-theme.scss", "projects/alv/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -88,10 +82,7 @@
             "polyfills": "projects/alv/src/polyfills.ts",
             "tsConfig": "projects/alv/tsconfig.spec.json",
             "karmaConfig": "projects/alv/karma.conf.js",
-            "assets": [
-              "projects/alv/src/favicon.ico",
-              "projects/alv/src/assets"
-            ],
+            "assets": ["projects/alv/src/favicon.ico", "projects/alv/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/alv/src/styles.scss"
@@ -107,9 +98,7 @@
               "projects/alv/tsconfig.spec.json",
               "projects/alv/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -155,13 +144,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/card-designs/tsconfig.lib.json",
-              "projects/card-designs/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/card-designs/tsconfig.lib.json", "projects/card-designs/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -195,13 +179,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/alv-types/tsconfig.lib.json",
-              "projects/alv-types/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/alv-types/tsconfig.lib.json", "projects/alv-types/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

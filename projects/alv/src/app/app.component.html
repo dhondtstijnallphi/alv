@@ -1,3 +1,18 @@
-<allphi-design1 [message]="msg"></allphi-design1>
-<cards-design2 [message]="msg"></cards-design2>
-<cards-design3 [message]="msg"></cards-design3>
+<div class="main-grid-container">
+  <div class="container-toolbar">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>AVL</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <div class="container-filter"></div>
+  <div class="container-content">
+    <div class="content-flowGrid">
+      <allphi-design1 [message]="msg"></allphi-design1>
+      <cards-design2 [message]="msg"></cards-design2>
+      <cards-design3 [message]="msg"></cards-design3>
+      <allphi-design1 [message]="msg"></allphi-design1>
+    </div>
+  </div>
+</div>
