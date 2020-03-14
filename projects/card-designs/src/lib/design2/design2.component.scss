@@ -19,7 +19,11 @@
     min-width: 81px;
     min-height: 81px;
     .material-icons {
-      font-size: 48px;
+      line-height: 81px;
+      min-width: 81px;
+      min-height: 81px;
+      text-align: center;
+      font-size: 70px;
     }
   }
 }
